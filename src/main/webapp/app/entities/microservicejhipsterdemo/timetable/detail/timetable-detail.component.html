@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="timetable">
+      <h2 data-cy="timetableDetailsHeading">
+        <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoTimetable.detail.title">Timetable</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ timetable.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoTimetable.titleUz">Title Uz</span></dt>
+        <dd>
+          <span>{{ timetable.titleUz }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoTimetable.titleRu">Title Ru</span></dt>
+        <dd>
+          <span>{{ timetable.titleRu }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoTimetable.titleKr">Title Kr</span></dt>
+        <dd>
+          <span>{{ timetable.titleKr }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoTimetable.contentUz">Content Uz</span></dt>
+        <dd>
+          <span>{{ timetable.contentUz }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoTimetable.contentRu">Content Ru</span></dt>
+        <dd>
+          <span>{{ timetable.contentRu }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoTimetable.contentKr">Content Kr</span></dt>
+        <dd>
+          <span>{{ timetable.contentKr }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoTimetable.status">Status</span></dt>
+        <dd>
+          <span>{{ timetable.status }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/microservicejhipsterdemo/timetable', timetable.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "microservicejhipsterdemoApp": {
+    "microservicejhipsterdemoAddmissionRules": {
+      "home": {
+        "title": "Addmission Rules",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Addmission Rules",
+        "createOrEditLabel": "Create or edit a Addmission Rules",
+        "notFound": "No Addmission Rules found"
+      },
+      "created": "A new Addmission Rules is created with identifier {{ param }}",
+      "updated": "A Addmission Rules is updated with identifier {{ param }}",
+      "deleted": "A Addmission Rules is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Addmission Rules {{ id }}?"
+      },
+      "detail": {
+        "title": "Addmission Rules"
+      },
+      "id": "ID",
+      "titleUz": "Title Uz",
+      "titleRu": "Title Ru",
+      "titleKr": "Title Kr",
+      "contentUz": "Content Uz",
+      "contentRu": "Content Ru",
+      "contentKr": "Content Kr",
+      "status": "Status"
+    }
+  }
+}

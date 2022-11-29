@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="addmissionRules">
+      <h2 data-cy="addmissionRulesDetailsHeading">
+        <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoAddmissionRules.detail.title">Addmission Rules</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ addmissionRules.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoAddmissionRules.titleUz">Title Uz</span></dt>
+        <dd>
+          <span>{{ addmissionRules.titleUz }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoAddmissionRules.titleRu">Title Ru</span></dt>
+        <dd>
+          <span>{{ addmissionRules.titleRu }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoAddmissionRules.titleKr">Title Kr</span></dt>
+        <dd>
+          <span>{{ addmissionRules.titleKr }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoAddmissionRules.contentUz">Content Uz</span></dt>
+        <dd>
+          <span>{{ addmissionRules.contentUz }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoAddmissionRules.contentRu">Content Ru</span></dt>
+        <dd>
+          <span>{{ addmissionRules.contentRu }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoAddmissionRules.contentKr">Content Kr</span></dt>
+        <dd>
+          <span>{{ addmissionRules.contentKr }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoAddmissionRules.status">Status</span></dt>
+        <dd>
+          <span>{{ addmissionRules.status }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button
+        type="button"
+        [routerLink]="['/microservicejhipsterdemo/addmission-rules', addmissionRules.id, 'edit']"
+        class="btn btn-primary"
+      >
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

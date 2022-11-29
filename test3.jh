@@ -1,0 +1,47 @@
+/* Инструкция по регистрации page
+*/
+entity RegInstructuion {
+    titleUz String required,
+    titleRu String required,
+    titleKr String required,
+    contentUz String required,
+    contentRu String required,
+    contentKr String required,
+    status Boolean required
+}
+
+/* Правила приёма page
+*/
+entity AddmissionRules {
+    titleUz String required,
+    titleRu String required,
+    titleKr String required,
+    contentUz String required,
+    contentRu String required,
+    contentKr String required,
+    status Boolean required
+}
+
+
+/* Расписание page
+*/
+entity Timetable {
+    titleUz String required,
+    titleRu String required,
+    titleKr String required,
+    contentUz String required,
+    contentRu String required,
+    contentKr String required,
+    status Boolean required
+}
+
+
+// Set pagination options
+paginate RegInstructuion, AddmissionRules, Timetable  with pagination
+
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl //except Employee, Job

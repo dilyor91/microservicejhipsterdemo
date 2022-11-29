@@ -1,0 +1,30 @@
+{
+  "microservicejhipsterdemoApp": {
+    "microservicejhipsterdemoRegInstructuion": {
+      "home": {
+        "title": "Reg Instructuions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Reg Instructuion",
+        "createOrEditLabel": "Create or edit a Reg Instructuion",
+        "notFound": "No Reg Instructuions found"
+      },
+      "created": "A new Reg Instructuion is created with identifier {{ param }}",
+      "updated": "A Reg Instructuion is updated with identifier {{ param }}",
+      "deleted": "A Reg Instructuion is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Reg Instructuion {{ id }}?"
+      },
+      "detail": {
+        "title": "Reg Instructuion"
+      },
+      "id": "ID",
+      "titleUz": "Title Uz",
+      "titleRu": "Title Ru",
+      "titleKr": "Title Kr",
+      "contentUz": "Content Uz",
+      "contentRu": "Content Ru",
+      "contentKr": "Content Kr",
+      "status": "Status"
+    }
+  }
+}

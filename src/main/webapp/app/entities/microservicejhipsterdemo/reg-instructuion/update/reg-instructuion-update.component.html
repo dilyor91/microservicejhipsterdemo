@@ -1,0 +1,167 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-reg-instructuion-heading"
+        data-cy="RegInstructuionCreateUpdateHeading"
+        jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.home.createOrEditLabel"
+      >
+        Create or edit a Reg Instructuion
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.titleUz"
+            for="field_titleUz"
+            >Title Uz</label
+          >
+          <input type="text" class="form-control" name="titleUz" id="field_titleUz" data-cy="titleUz" formControlName="titleUz" />
+          <div *ngIf="editForm.get('titleUz')!.invalid && (editForm.get('titleUz')!.dirty || editForm.get('titleUz')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('titleUz')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.titleRu"
+            for="field_titleRu"
+            >Title Ru</label
+          >
+          <input type="text" class="form-control" name="titleRu" id="field_titleRu" data-cy="titleRu" formControlName="titleRu" />
+          <div *ngIf="editForm.get('titleRu')!.invalid && (editForm.get('titleRu')!.dirty || editForm.get('titleRu')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('titleRu')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.titleKr"
+            for="field_titleKr"
+            >Title Kr</label
+          >
+          <input type="text" class="form-control" name="titleKr" id="field_titleKr" data-cy="titleKr" formControlName="titleKr" />
+          <div *ngIf="editForm.get('titleKr')!.invalid && (editForm.get('titleKr')!.dirty || editForm.get('titleKr')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('titleKr')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.contentUz"
+            for="field_contentUz"
+            >Content Uz</label
+          >
+          <input type="text" class="form-control" name="contentUz" id="field_contentUz" data-cy="contentUz" formControlName="contentUz" />
+          <div *ngIf="editForm.get('contentUz')!.invalid && (editForm.get('contentUz')!.dirty || editForm.get('contentUz')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('contentUz')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.contentRu"
+            for="field_contentRu"
+            >Content Ru</label
+          >
+          <input type="text" class="form-control" name="contentRu" id="field_contentRu" data-cy="contentRu" formControlName="contentRu" />
+          <div *ngIf="editForm.get('contentRu')!.invalid && (editForm.get('contentRu')!.dirty || editForm.get('contentRu')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('contentRu')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.contentKr"
+            for="field_contentKr"
+            >Content Kr</label
+          >
+          <input type="text" class="form-control" name="contentKr" id="field_contentKr" data-cy="contentKr" formControlName="contentKr" />
+          <div *ngIf="editForm.get('contentKr')!.invalid && (editForm.get('contentKr')!.dirty || editForm.get('contentKr')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('contentKr')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.status"
+            for="field_status"
+            >Status</label
+          >
+          <input type="checkbox" class="form-check" name="status" id="field_status" data-cy="status" formControlName="status" />
+          <div *ngIf="editForm.get('status')!.invalid && (editForm.get('status')!.dirty || editForm.get('status')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('status')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
