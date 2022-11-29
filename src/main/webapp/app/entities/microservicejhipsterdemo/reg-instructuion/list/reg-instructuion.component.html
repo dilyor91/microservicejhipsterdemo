@@ -1,0 +1,150 @@
+<div>
+  <h2 id="page-heading" data-cy="RegInstructuionHeading">
+    <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.home.title">Reg Instructuions</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-reg-instructuion"
+        [routerLink]="['/microservicejhipsterdemo/reg-instructuion/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.home.createLabel">
+          Create a new Reg Instructuion
+        </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="regInstructuions?.length === 0">
+    <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.home.notFound">No Reg Instructuions found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="regInstructuions && regInstructuions.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="titleUz">
+            <div class="d-flex">
+              <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.titleUz">Title Uz</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="titleRu">
+            <div class="d-flex">
+              <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.titleRu">Title Ru</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="titleKr">
+            <div class="d-flex">
+              <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.titleKr">Title Kr</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="contentUz">
+            <div class="d-flex">
+              <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.contentUz">Content Uz</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="contentRu">
+            <div class="d-flex">
+              <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.contentRu">Content Ru</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="contentKr">
+            <div class="d-flex">
+              <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.contentKr">Content Kr</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.status">Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let regInstructuion of regInstructuions; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/microservicejhipsterdemo/reg-instructuion', regInstructuion.id, 'view']">{{ regInstructuion.id }}</a>
+          </td>
+          <td>{{ regInstructuion.titleUz }}</td>
+          <td>{{ regInstructuion.titleRu }}</td>
+          <td>{{ regInstructuion.titleKr }}</td>
+          <td>{{ regInstructuion.contentUz }}</td>
+          <td>{{ regInstructuion.contentRu }}</td>
+          <td>{{ regInstructuion.contentKr }}</td>
+          <td>{{ regInstructuion.status }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/microservicejhipsterdemo/reg-instructuion', regInstructuion.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/microservicejhipsterdemo/reg-instructuion', regInstructuion.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(regInstructuion)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="regInstructuions && regInstructuions.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

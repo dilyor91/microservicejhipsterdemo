@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="regInstructuion">
+      <h2 data-cy="regInstructuionDetailsHeading">
+        <span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.detail.title">Reg Instructuion</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ regInstructuion.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.titleUz">Title Uz</span></dt>
+        <dd>
+          <span>{{ regInstructuion.titleUz }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.titleRu">Title Ru</span></dt>
+        <dd>
+          <span>{{ regInstructuion.titleRu }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.titleKr">Title Kr</span></dt>
+        <dd>
+          <span>{{ regInstructuion.titleKr }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.contentUz">Content Uz</span></dt>
+        <dd>
+          <span>{{ regInstructuion.contentUz }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.contentRu">Content Ru</span></dt>
+        <dd>
+          <span>{{ regInstructuion.contentRu }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.contentKr">Content Kr</span></dt>
+        <dd>
+          <span>{{ regInstructuion.contentKr }}</span>
+        </dd>
+        <dt><span jhiTranslate="microservicejhipsterdemoApp.microservicejhipsterdemoRegInstructuion.status">Status</span></dt>
+        <dd>
+          <span>{{ regInstructuion.status }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button
+        type="button"
+        [routerLink]="['/microservicejhipsterdemo/reg-instructuion', regInstructuion.id, 'edit']"
+        class="btn btn-primary"
+      >
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
